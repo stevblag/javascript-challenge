@@ -27,7 +27,7 @@ function tableDisplay(ufoSightings) {
   // 'Filter Table' button
   var button = d3.select("#filter-btn");
   
-  // filter DB & display table
+  // filter DB & display revised table
   button.on("click", function(event) {
     d3.event.preventDefault();
     deleteTbody();
@@ -42,7 +42,7 @@ function tableDisplay(ufoSightings) {
         ufoSighting.datetime === dateInput.trim());
     };
   
-    // return message "No Records Found" if FS date field input does not match any DB entry
+    // return message "No Records Found" if FS date entry field value does not match any DB entry
     if (filteredData.length == 0) {
       d3.select("tbody")
         .append("tr")
